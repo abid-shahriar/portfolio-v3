@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abidshahriar.vercel.app/sitemap.xml
