@@ -1,29 +1,12 @@
 /* ========================================
-   ABID SHAHRIAR — PORTFOLIO JS
-   Lenis Smooth Scroll · Parallax Effects
-   Particles · Scroll Reveal · Typewriter
+  ABID SHAHRIAR — PORTFOLIO JS
+  Parallax Effects · Particles · Scroll Reveal · Typewriter
 ======================================== */
 
 (function () {
   'use strict';
 
-  // ─── LENIS SMOOTH SCROLL (Desktop & Mobile) ───
-  let lenis;
-  if (typeof Lenis !== 'undefined') {
-    lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      smoothTouch: true, // Native-like smooth touch scrolling on mobile
-      touchMultiplier: 1.5
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }
+  // Native browser scrolling — removed Lenis smooth-scroll integration
 
   // ─── PARTICLE SYSTEM (Visible & Elegant) ──────
   class ParticleSystem {
@@ -191,23 +174,30 @@
     }
 
     bindEvents() {
-      if (lenis) {
-        lenis.on('scroll', (e) => {
-          const scrollY = e.scroll;
-          this.parallaxElements.forEach((el) => {
-            const speed = parseFloat(el.dataset.speed) || -0.05;
-            el.style.transform = `translateY(${scrollY * speed}px)`;
-          });
+      // Throttle scroll-driven transforms with requestAnimationFrame
+      let ticking = false;
+      const update = () => {
+        const scrollY = window.scrollY || window.pageYOffset || 0;
+        this.parallaxElements.forEach((el) => {
+          const speed = parseFloat(el.dataset.speed) || -0.05;
+          el.style.transform = `translateY(${scrollY * speed}px)`;
         });
-      } else {
-        window.addEventListener('scroll', () => {
-          const scrollY = window.scrollY;
-          this.parallaxElements.forEach((el) => {
-            const speed = parseFloat(el.dataset.speed) || -0.05;
-            el.style.transform = `translateY(${scrollY * speed}px)`;
-          });
-        });
-      }
+        ticking = false;
+      };
+
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(update);
+          }
+        },
+        { passive: true }
+      );
+
+      // Run once to set initial positions
+      update();
     }
   }
 
