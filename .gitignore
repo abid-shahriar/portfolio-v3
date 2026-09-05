@@ -2,3 +2,5 @@
 data.json
 /data.json
 */data.json
+dist/
+node_modules/
