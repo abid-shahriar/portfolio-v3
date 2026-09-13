@@ -21,7 +21,7 @@ for (const [, attributes] of html.matchAll(/<img\b([^>]+)>/g))
   assert.match(attributes, /\balt="[^"]+"/, "Images need alt text");
 for (const name of [
   "Private Health Tech SaaS Company",
-  "Valkyrit IT Limited",
+  "Valkyrie IT Ltd.",
   "Wikiance",
   "Govt. Azizul Haque College",
   "Bogura Zilla School",
@@ -40,12 +40,18 @@ assert.equal(
   "%PDF-",
   "Resume must be a valid PDF file",
 );
-for (const file of ["index.html", "styles.css", "script.js", "sitemap.xml"])
-  assert.equal(
-    await readFile(file, "utf8"),
-    await readFile(`dist/${file}`, "utf8"),
-    `Stale build: ${file}`,
-  );
+const production = await readFile("dist/index.html", "utf8");
+for (const [, url] of production.matchAll(/(?:href|src)="([^"]+)"/g)) {
+  if (!/^(https?:|mailto:|tel:|#)/.test(url)) await access(`dist/${url}`);
+}
+assert.ok(
+  production.includes('type="module"'),
+  "Production JavaScript must be bundled",
+);
+assert.equal(
+  await readFile("sitemap.xml", "utf8"),
+  await readFile("dist/sitemap.xml", "utf8"),
+);
 console.log(
   `Checked ${ids.length} unique anchors, ${localLinks} local assets and downloads, portfolio content, accessibility hooks, and production output.`,
 );

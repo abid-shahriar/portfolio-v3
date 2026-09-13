@@ -4,3 +4,5 @@ data.json
 */data.json
 dist/
 node_modules/
+test-results/
+playwright-report/
