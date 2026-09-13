@@ -26,44 +26,44 @@
         <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a>
       </nav>
       <div class="header-actions">
-        <a class="nav-contact" href="#contact">Let’s talk ↗</a>
+        <a class="nav-contact" href="#contact">Say hello ↗</a>
         <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
       </div>
       <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
-        <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Let’s talk ↗</a>
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Say hello ↗</a>
       </nav>
     </header>
 
     <main id="main">
       <section class="hero" id="hero" aria-labelledby="hero-heading">
-        <p class="eyebrow"><span class="status-dot"></span> Available for thoughtful work</p>
+        <p class="eyebrow" data-reveal><span class="status-dot"></span> Full-stack developer · working full-time</p>
         <div class="hero-layout">
-          <div>
+          <div data-reveal>
             <p class="intro">Hi, I’m Abid Shahriar.</p>
             <h1 id="hero-heading">I build clear interfaces and reliable systems.</h1>
           </div>
-          <div class="hero-aside">
-            <p>Full-stack developer based in Bangladesh. I turn complex product problems into digital experiences that feel simple to use.</p>
+          <div class="hero-aside" data-reveal>
+            <p>I work with product teams to turn complex requirements into software people can rely on—usually with fewer moving parts than we started with.</p>
             <div class="hero-actions">
-              <a class="button" href="#experience">View my work ↓</a>
+              <a class="button" href="#experience">See my experience ↓</a>
               <a class="text-link" href="public/ABID_SHAHRIAR_RESUME.pdf" download>Download résumé ↘</a>
             </div>
           </div>
         </div>
-        <div class="hero-meta"><span>Bogura, Bangladesh</span><span>5+ years of experience</span><span>Frontend · Backend · Delivery</span></div>
+        <div class="hero-meta" data-reveal><span>Bogura, Bangladesh</span><span>5+ years in product teams</span><span>Frontend · Backend · Delivery</span></div>
       </section>
 
       <section class="section about" id="about" aria-labelledby="about-heading">
-        <div class="section-label">01 / About</div>
+        <div class="section-label" data-reveal>01 / About</div>
         <div class="about-layout">
-          <figure class="portrait">
+          <figure class="portrait" data-reveal>
             <img src="public/abid.jpeg" alt="Abid Shahriar smiling, wearing a hat" width="2540" height="2540" loading="lazy" decoding="async" />
             <figcaption>Bogura, Bangladesh · UTC +06:00</figcaption>
           </figure>
-          <div class="about-copy">
+          <div class="about-copy" data-reveal>
             <h2 id="about-heading">Serious about code. Curious about everything.</h2>
             <p class="lead">Good software starts with understanding people.</p>
-            <p>For more than five years, I’ve helped teams across the US, Bangladesh, and India turn complex challenges into products people enjoy using.</p>
+            <p>For more than five years, I’ve worked in full-time engineering roles with teams across the US, Bangladesh, and India, turning complex requirements into products people enjoy using.</p>
             <p>I connect thoughtful interfaces with reliable systems. I care about the details people notice, the performance they feel, and the architecture they never have to think about.</p>
             <dl class="facts">
               <div><dt>5+</dt><dd>Years building</dd></div><div><dt>3</dt><dd>Countries connected</dd></div><div><dt>∞</dt><dd>Things to learn</dd></div>
@@ -73,40 +73,40 @@
       </section>
 
       <section class="section" id="experience" aria-labelledby="experience-heading">
-        <div class="section-label">02 / Experience</div>
-        <div class="section-intro">
+        <div class="section-label" data-reveal>02 / Experience</div>
+        <div class="section-intro" data-reveal>
           <h2 id="experience-heading">Selected roles and the work behind them.</h2>
-          <p>A focused view of the products, systems, and teams I’ve contributed to.</p>
+          <p>The shipped work, the necessary rewrites, and a reasonable number of meetings.</p>
         </div>
         <div class="career-list">
-          <details class="career" open>
+          <details class="career" open data-reveal>
             <summary><span class="career-index">01</span><span><strong>Sr. Frontend Engineer</strong><small>Private Health Tech SaaS Company · Minnesota, USA</small></span><span class="career-date">Oct 2023 — Present</span><span class="expand-icon" aria-hidden="true">+</span></summary>
-            <div class="career-body"><h3>Making complex care feel simpler.</h3><div><p>Led legacy modernization and an architectural overhaul of an enterprise healthcare platform. Built responsive clinical forms and real-time dashboards with Next.js and TypeScript.</p><ul><li>Architected Playwright end-to-end testing and automated regression coverage.</li><li>Used AI-assisted workflows to accelerate layout implementation and iteration.</li><li>Presented product demos to executive stakeholders in bi-weekly delivery cycles.</li></ul><div class="tags"><span>Next.js</span><span>TypeScript</span><span>Playwright</span><span>AI workflows</span></div></div></div>
+            <div class="career-body"><h3>Making complex care feel simpler. The software included.</h3><div><p>Led legacy modernization and an architectural overhaul of an enterprise healthcare platform. Built responsive clinical forms and real-time dashboards with Next.js and TypeScript.</p><ul><li>Architected Playwright end-to-end testing and automated regression coverage.</li><li>Used AI-assisted workflows to accelerate layout implementation and iteration.</li><li>Presented product demos to executive stakeholders in bi-weekly delivery cycles.</li></ul><div class="tags"><span>Next.js</span><span>TypeScript</span><span>Playwright</span><span>AI workflows</span></div></div></div>
           </details>
-          <details class="career">
+          <details class="career" data-reveal>
             <summary><span class="career-index">02</span><span><strong>Backend Engineer</strong><small>Valkyrie IT Ltd. · Dhaka, Bangladesh</small></span><span class="career-date">Nov 2021 — Sep 2023</span><span class="expand-icon" aria-hidden="true">+</span></summary>
-            <div class="career-body"><h3>The foundations behind the experience.</h3><div><p>Engineered scalable backend infrastructure, microservices, and core features for an enterprise HRM platform.</p><ul><li>Designed APIs for employee data, geolocated attendance, and payroll.</li><li>Optimized PostgreSQL schemas and queries with Prisma ORM.</li><li>Protected transactional consistency across business-critical workflows.</li></ul><div class="tags"><span>Node.js</span><span>REST APIs</span><span>PostgreSQL</span><span>Prisma</span></div></div></div>
+            <div class="career-body"><h3>The part nobody notices until it stops working.</h3><div><p>Engineered scalable backend infrastructure, microservices, and core features for an enterprise HRM platform.</p><ul><li>Designed APIs for employee data, geolocated attendance, and payroll.</li><li>Optimized PostgreSQL schemas and queries with Prisma ORM.</li><li>Protected transactional consistency across business-critical workflows.</li></ul><div class="tags"><span>Node.js</span><span>REST APIs</span><span>PostgreSQL</span><span>Prisma</span></div></div></div>
           </details>
-          <details class="career">
+          <details class="career" data-reveal>
             <summary><span class="career-index">03</span><span><strong>Frontend Engineer</strong><small>Wikiance · Kolkata, India</small></span><span class="career-date">Nov 2020 — Oct 2021</span><span class="expand-icon" aria-hidden="true">+</span></summary>
-            <div class="career-body"><h3>Helping people tell their stories.</h3><div><p>Led frontend development and modular feature expansion for a client-side résumé builder.</p><ul><li>Refactored an asset-heavy technology blog around a headless CMS.</li><li>Improved build speed, SEO indexing, and production stability.</li><li>Mentored engineering interns through documentation and code review.</li></ul><div class="tags"><span>Frontend</span><span>Headless CMS</span><span>State management</span><span>Mentorship</span></div></div></div>
+            <div class="career-body"><h3>Helping people tell their stories without fighting the interface.</h3><div><p>Led frontend development and modular feature expansion for a client-side résumé builder.</p><ul><li>Refactored an asset-heavy technology blog around a headless CMS.</li><li>Improved build speed, SEO indexing, and production stability.</li><li>Mentored engineering interns through documentation and code review.</li></ul><div class="tags"><span>Frontend</span><span>Headless CMS</span><span>State management</span><span>Mentorship</span></div></div></div>
           </details>
         </div>
       </section>
 
       <section class="section" id="skills" aria-labelledby="skills-heading">
-        <div class="section-label">03 / Skills</div>
-        <div class="section-intro">
+        <div class="section-label" data-reveal>03 / Skills</div>
+        <div class="section-intro" data-reveal>
           <h2 id="skills-heading">A practical stack from interface to infrastructure.</h2>
-          <p>The tools I use to move a product from an idea to a dependable release.</p>
+          <p>The tools I use to ship reliable work—and occasionally prove the cache was not the problem.</p>
         </div>
         <div class="skills-grid">
-          <article><span>Frontend</span><h3>The part people use.</h3><p>TypeScript, React, Next.js, Tailwind CSS, TanStack Query, Redux Toolkit</p></article>
-          <article><span>Backend</span><h3>The engine beneath.</h3><p>Node.js, Express, PostgreSQL, MongoDB, Prisma, Drizzle ORM, SQL</p></article>
-          <article><span>Delivery</span><h3>Built to go live.</h3><p>GitHub Actions, DigitalOcean, Linux, Nginx, Playwright, Clerk Auth</p></article>
-          <article><span>Workflow</span><h3>AI, with judgment.</h3><p>Claude, Codex, Gemini, and Copilot for faster exploration—with human review before shipping.</p></article>
+          <article data-reveal><span>Frontend</span><h3>The part people use.</h3><p>TypeScript, React, Next.js, Tailwind CSS, TanStack Query, Redux Toolkit</p></article>
+          <article data-reveal><span>Backend</span><h3>The part nobody sees. Until it breaks.</h3><p>Node.js, Express, PostgreSQL, MongoDB, Prisma, Drizzle ORM, SQL</p></article>
+          <article data-reveal><span>Delivery</span><h3>“Works on my machine” is not a release plan.</h3><p>GitHub Actions, DigitalOcean, Linux, Nginx, Playwright, Clerk Auth</p></article>
+          <article data-reveal><span>Workflow</span><h3>AI, with judgment.</h3><p>Claude, Codex, Gemini, and Copilot move drafts faster. They still do not approve their own pull requests.</p></article>
         </div>
-        <div class="education">
+        <div class="education" data-reveal>
           <div><span>04 / Education</span><h2>Always a student.</h2></div>
           <div><article><span><strong>Govt. Azizul Haque College</strong><small>Higher Secondary Certificate · Science</small></span><time>2016–2018</time></article><article><span><strong>Bogura Zilla School</strong><small>Secondary School Certificate · Science</small></span><time>2008–2016</time></article></div>
         </div>
@@ -114,9 +114,9 @@
 
       <section class="contact" id="contact" aria-labelledby="contact-heading">
         <span class="section-label">05 / Contact</span>
-        <h2 id="contact-heading">Have a role, project, or idea in mind?</h2>
-        <p>Tell me what you’re working on. I’d be glad to hear about it.</p>
-        <a class="button" href="mailto:abidshahriar7@gmail.com">Start a conversation ↗</a>
+        <h2 id="contact-heading">Here for the work. Open to the right conversation.</h2>
+        <p>I’m focused on full-time product work, but I’m always happy to connect with thoughtful people in technology.</p>
+        <a class="button" href="mailto:abidshahriar7@gmail.com">Say hello ↗</a>
         <a class="contact-email" href="mailto:abidshahriar7@gmail.com">abidshahriar7@gmail.com</a>
       </section>
     </main>

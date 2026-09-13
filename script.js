@@ -58,3 +58,34 @@ const sectionObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll("#about, #experience, #skills, #contact").forEach((section) => sectionObserver.observe(section));
+
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+if (!reducedMotion.matches && "IntersectionObserver" in window) {
+  document.documentElement.classList.add("motion-ready");
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.08, rootMargin: "0px 0px -6%" },
+  );
+  document.querySelectorAll("[data-reveal]").forEach((element) => revealObserver.observe(element));
+}
+
+const header = document.querySelector(".site-header");
+let scrollFrame = 0;
+function updateHeader() {
+  header.classList.toggle("is-scrolled", window.scrollY > 18);
+  scrollFrame = 0;
+}
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(updateHeader);
+  },
+  { passive: true },
+);
+updateHeader();

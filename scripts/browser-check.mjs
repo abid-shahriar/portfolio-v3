@@ -61,6 +61,19 @@ try {
     assert.equal(resume.status(), 200);
     assert.equal((await resume.body()).subarray(0, 5).toString(), "%PDF-");
 
+    for (const element of await page.locator("[data-reveal]").all()) {
+      await element.scrollIntoViewIfNeeded();
+      await page.waitForTimeout(70);
+    }
+    await page.waitForTimeout(900);
+    assert.equal(
+      await page.locator("[data-reveal]").evaluateAll((elements) =>
+        elements.every((element) => Number.parseFloat(getComputedStyle(element).opacity) > 0.95),
+      ),
+      true,
+      `${name}: reveal content should settle visibly`,
+    );
+
     await page.screenshot({ path: `test-results/${name}.png`, fullPage: true, scale: "css" });
     console.log(`${name}: layout, navigation, experience, resume, and no-3D checks passed`);
     await context.close();
