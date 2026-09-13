@@ -104,7 +104,9 @@ button:focus-visible, a:focus-visible, summary:focus-visible {
   letter-spacing: .05em;
   text-transform: uppercase;
 }
-.eyebrow { display: flex; align-items: center; gap: 10px; }
+.eyebrow { display: flex; align-items: center; flex-wrap: wrap; column-gap: 10px; row-gap: 2px; }
+/* Keep each phrase intact so a narrow screen breaks at the separator, not mid-phrase. */
+.eyebrow > span:not(.status-dot) { white-space: nowrap; }
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 .hero-layout {
   display: grid;
@@ -123,6 +125,8 @@ h1 {
 .hero-aside { padding-bottom: 8px; }
 .hero-aside > p { color: #b8beb0; font-size: 18px; line-height: 1.65; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; margin-top: 32px; }
+/* Let the row wrap instead of squeezing a link narrower than its own text. */
+.hero-actions > * { flex-shrink: 0; }
 .button {
   display: inline-flex;
   align-items: center;
@@ -317,7 +321,7 @@ h2 {
   .mobile-nav a:last-child { color: var(--accent); border: 0; }
   .hero { padding-top: 52px; }
   .hero-layout { grid-template-columns: 1fr; gap: 36px; padding: 50px 0 64px; }
-  h1 { font-size: clamp(52px, 12vw, 82px); }
+  h1 { font-size: clamp(40px, 8vw, 62px); }
   .hero-aside { max-width: 560px; }
   .hero-meta { grid-template-columns: 1fr; gap: 6px; }
   .hero-meta span:nth-child(2), .hero-meta span:last-child { text-align: left; }
@@ -341,15 +345,18 @@ h2 {
   .section { padding: 44px 0 34px; }
   .section-label { margin-bottom: 22px; }
   .hero { padding-top: 32px; }
-  h1 { font-size: clamp(48px, 14vw, 68px); }
-  h2 { font-size: 38px; }
+  h1 { font-size: clamp(34px, 10.5vw, 46px); }
+  h2 { font-size: 30px; }
+  .wordmark { font-size: 24px; letter-spacing: -1.4px; }
+  /* 48 chars of letter-spaced uppercase mono needs ~406px; a 390px phone has ~334px. */
+  .eyebrow { font-size: 11px; letter-spacing: 0; column-gap: 8px; }
   .hero-layout { gap: 24px; padding: 32px 0 38px; }
   .hero-actions { gap: 18px; margin-top: 24px; }
   .hero-meta { padding-block: 16px; }
   .hero-aside > p { font-size: 17px; }
   .about-copy .lead { margin-top: 24px; }
   .facts { gap: 10px; margin-top: 30px; padding-top: 22px; }
-  .facts dt { font-size: 34px; }
+  .facts dt { font-size: 30px; }
   .facts dd { font-size: 10px; }
   .career summary { grid-template-columns: 28px 1fr 44px; gap: 10px; min-height: 92px; padding-block: 18px; }
   .career summary strong { font-size: 19px; }
@@ -364,7 +371,8 @@ h2 {
   .education { gap: 28px; margin-top: 50px; }
   .education article { align-items: flex-start; padding-block: 18px; }
   .contact { padding-block: 52px; }
-  .contact h2 { font-size: 42px; }
+  .contact h2 { font-size: 32px; }
+  .education h2 { font-size: 26px; }
   .site-footer { grid-template-columns: 1fr; padding-top: 34px; }
   .social-links { flex-wrap: wrap; gap: 20px; }
 }
